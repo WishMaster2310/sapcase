@@ -1,0 +1,291 @@
+.slider {
+	position: absolute;
+	display: none;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+
+	&__viewport {
+		position: absolute;
+		top: 29px;
+		left: 50%;
+		width: 319px;
+		height: 563px;
+		//margin-left: -176px;
+		margin-left: -148px;
+		background: url(../images/workflow.png) no-repeat center top;
+	}
+
+	&__screen {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 999em;
+		height: 360px;
+		background-color: #FCB812;
+		.clearfix();
+
+		&-item {
+			width: 204px;
+			height: 360px;
+			float: left;
+			transition: transform .5s ease-in-out;
+
+			img {
+				width: 100%;
+				height: 100%;
+				display: block;
+			}
+
+			&.active {
+				visibility: visible;
+				transform: translateX(0);
+			}
+		}
+	}
+
+	&__overflow {
+		position: absolute;
+		width: 204px;
+		height: 360px;
+		top: 75px;
+		left: 53px;
+		overflow: hidden;
+		
+	}
+
+	&__controls {
+		position: absolute;
+		height: 100px;
+		width: 1000px;
+		left: 50%;
+		top: 50%;
+		margin-left: -500px;
+		margin-top: -50px;
+		z-index: 2;
+	}
+
+	&__arrow {
+		width: 50px;
+		height: 50px;
+		top: 50%;
+		margin-top: -25px;
+		cursor: pointer;
+		position: absolute;
+		transform: rotate(45deg);
+		transition: all .6s ease-in;
+
+		&--left {
+			border-left: 1px solid #000;
+			border-bottom: 1px solid #000;
+			left: 50%;
+		}
+
+		&--right {
+			border-right: 1px solid #000;
+			border-top: 1px solid #000;
+			right: 50%;
+		}
+	}
+
+	&--visible &__arrow--left{
+		left: 10px;
+	}
+
+	&--visible &__arrow--right{
+		right: 10px;
+	}
+
+	&__texts {
+		position: absolute;
+		width: 1000px;
+		left: 50%;
+		margin-left: -500px;
+		height: 100%;
+	}
+
+	&__text {
+		position: absolute;
+		opacity: 0;
+		right: 55px;
+		width: 260px;
+		height: 100%;
+
+		&-header {
+			font-size: 2.25em;
+			line-height: 1;
+			margin-bottom: 30px;
+			font-weight: bold;
+		}
+
+		&-para {
+			font-size: 1.06em;
+		}
+
+		&.active {
+			.flipInX();
+			opacity: 1;
+		}
+	}
+
+	&__centroid {
+		display: table;
+		height: 100%;
+		width: 100%;
+
+		&-inner {
+			display: table-cell;
+			vertical-align: middle;
+		}
+	}
+
+	&__icons {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+
+		.i-icon {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(0, 0);
+			transition: transform 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+		}
+	}
+
+	.active {
+		.slider__icon--1{
+			&-1 {transform: translate(-394px, 240px);}
+			&-2 {transform: translate(-452px, -232px);}
+			&-3 {transform: translate(-518px, 166px);}
+			&-4 {transform: translate(-370px, -140px);}
+			&-5 {transform: translate(354px, -215px);}
+			&-6 {transform: translate(161px, 184px);}
+			&-7 {transform: translate(405px, 174px);}
+			&-8 {transform: translate(276px, 109px);}
+			&-9 {transform: translate(-405px, -174px);}
+			&-9 {transform: translate(-405px, -174px);}
+		}
+
+		.slider__icon--2 {
+			&-1 {transform: translate(-333px, 175px);}
+			&-2 {transform: translate(-287px, -218px);}
+			&-3 {transform: translate(-473px, 108px);}
+			&-4 {transform: translate(209px, -140px);}
+			&-5 {transform: translate(354px, -215px);}
+			&-6 {transform: translate(161px, 184px);}
+			&-7 {transform: translate(405px, 174px);}
+			&-8 {transform: translate(276px, 109px);}
+			&-9 {transform: translate(-405px, -174px);}
+			&-9 {transform: translate(-405px, -174px);}
+			&-10 {transform: translate(405px, 174px);}
+		}
+
+		.slider__icon--4,
+		.slider__icon--3 {
+			&-1 {transform: translate(-394px, 240px);}
+			&-2 {transform: translate(-452px, -232px);}
+			&-3 {transform: translate(-518px, 166px);}
+			&-4 {transform: translate(-315px, -140px);}
+			&-5 {transform: translate(354px, -215px);}
+			&-6 {transform: translate(161px, 184px);}
+			&-7 {transform: translate(405px, 174px);}
+			&-8 {transform: translate(276px, 109px);}
+			&-9 {transform: translate(-405px, -174px);}
+			&-9 {transform: translate(-405px, -174px);}
+		}
+	}
+
+	&__icon-set {
+		//display: none;
+
+
+		
+
+
+		&.active {
+			display: block;
+		}
+	}
+}
+
+@-webkit-keyframes flipInX {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+
+  /* 80% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  } */
+
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+
+@keyframes flipInX {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+
+  /* 80% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  } */
+
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+
+.flipInX {
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipInX;
+  animation-name: flipInX;
+   -webkit-animation-duration: 1.2s;
+  animation-duration: 1.2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}

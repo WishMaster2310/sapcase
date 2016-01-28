@@ -1,0 +1,71 @@
+{% set slider = [
+	{
+		title: "Накопление <br>баллов и призы",
+		text: "Посетители будут максимально вовлечены в происходящее, и благодаря общению с коллегами узнают о самом интересном из первых уст",
+		img: "slider_0_1.png",
+		bg: "createyours-bg-1.jpg"
+	},
+	{
+		title: "Сообщения <br>и групповые чаты",
+		text: "Посетители будут максимально вовлечены в происходящее, и благодаря общению с коллегами узнают о самом интересном из первых уст",
+		img: "slider_0_2.png",
+		bg: "createyours-bg-2.jpg"
+
+	},
+	{
+		title: "Голосование <br>в рамках доклада",
+		text: "Такой формат голосования позволяет собрать вам необходимую статистику по&nbsp;заданной тематике, либо выяснить пожелания посетителй относительно содержания доклада.",
+		img: "slider_0_3.png",
+		bg: "createyours-bg-3.jpg"
+
+	},
+	{
+		title: "Обмен визитками <br>одним касанием",
+		text: "Эта новинка в приложении оставит у посетителей ваших мероприятий приятное впечатление, и они наверняка расскажут об этом друзьям. Что благоприятно скажется на имидже вашей компании.",
+		img: "slider_0_4.png",
+		bg: "createyours-bg-4.jpg"
+
+	}
+] %}
+<div class="createyours-bg">
+	{% for item in slider %}
+	    <img src="../images/{{ item.bg }}"  data-bind="css: {'active': m_site.activeSlick() == {{ loop.index - 1}}}"  alt="">
+	{% endfor %}
+</div>
+<div class="i-fullheight">
+        <div class="j-vcenter">
+            <div class="j-vcenter__inner">
+                
+
+                <div class="createyours-container">
+                	<h2 class="h2 createyours-title">Создай свое приложение <br>для&nbsp;мероприятий</h2>
+                	<div class="createyours-slider">
+                		{% for item in slider %}
+                		  <div class="createyours-slider__item">
+                		  	<div class="createyours__table">
+                		  		<div class="createyours__col createyours__col--img">
+                		  			<img src="../images/{{ item.img }}" alt="">
+                		  		</div>
+                		  		<div class="createyours__col createyours__col--content">
+                		  			<div class="createyours__caption">
+                		  				{{ item.title|safe }}
+                		  			</div>
+                		  			<div class="createyours__text">
+                		  				{{ item.text|safe }}
+                		  				<div class="createyours__icon">
+                		  					<svg width="37" height="32" xmlns="http://www.w3.org/2000/svg">
+                		  					  <path d="M 0 15 12 31 33 0" class="createyours__path active" stroke-dashoffset="100" stroke-dasharray="100" fill="none" stroke="#93c939" stroke-width="3" />
+                		  					</svg>
+                		  				</div>
+                		  			</div>
+                		  		</div>
+                		  	</div>
+                		  </div> 
+                		{% endfor %}
+                	</div>
+                	
+                </div>
+            </div>
+        </div>
+    </div>
+

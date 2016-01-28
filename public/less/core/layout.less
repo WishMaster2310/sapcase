@@ -1,0 +1,83 @@
+body {
+	font-family: @base-font;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 1.32;
+
+	&.velocity-animating {
+		pointer-events: none !important;
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.j-section {
+	transform: trsanslateZ(0);
+	overflow: hidden;
+
+	&--footer {
+		background-color: #fafafa;
+	}
+}
+
+.j-container {
+	max-width: 956px;
+	margin: 0px auto;
+}
+
+.i-icon {
+	background: url(../images/sprite-main.png) no-repeat center top;
+	display: inline-block;
+}
+
+.h1 {
+	font-size: 3.5em;
+	line-height: 1.2;
+	margin-bottom: 20px;
+
+	@media (max-width: @sm) {
+		font-size: 2.5em;
+	}
+}
+
+
+.h2 {
+	font-size: 3em;
+	font-weight: bold;
+}
+.j-vcenter {
+	display: table;
+	height: 100%;
+	width: 100%;
+
+	&__inner {
+		padding-top: 30px;
+		padding-bottom: 30px;
+		display: table-cell;
+		vertical-align: middle;
+
+		&--vat {
+			vertical-align: top;
+			padding-top: 0;
+		}
+	}
+}
+
+
+.services-block__list-item {
+	a {
+		color: #fff;
+		text-decoration: none;
+
+		&:hover {
+			opacity: .7
+		}
+	}
+}
+
+.services-block__header {
+	font-size: 1.35em;
+	font-weight: bold;
+}

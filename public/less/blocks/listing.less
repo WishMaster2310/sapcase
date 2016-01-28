@@ -1,0 +1,180 @@
+.listing {
+	&-section {
+		background: #101422 url(../images/listing-bg.jpg) no-repeat center top fixed;
+		background-size: cover;
+		color: #fff;
+	}
+
+	&__item {
+		margin-bottom: 3.75em;
+		opacity: 0;
+		transform: translateY(40px);
+		transition: all .8s ease-in-out;
+
+
+		&:nth-child(1) {
+			transition-delay: 0s
+
+		}
+
+		&:nth-child(2) {
+			transition-delay: .5s
+		}
+
+		&:nth-child(3) {
+			transition-delay: 1s
+		}
+	}
+	
+	&__inner {
+		display: table;
+		width: 100%;
+	}
+
+	&__header {
+		color: #f0ab00;
+	}
+
+	&-icon {
+		display: inline-block;
+		width: 150px;
+		position: relative;
+		overflow: hidden;
+		height: 150px;
+
+		i {
+			position: absolute;
+			top:0;
+			left: 50%;
+			transform: translateX(-50%);
+
+			&:nth-child(1) {
+				.fadeInAnim()
+			}
+
+			&:nth-child(2) {
+				.fadeOutAnim()
+			}
+		}
+	}
+
+	&__col {
+		display: table-cell;
+		vertical-align: top;
+
+
+		&--left {
+			width: 32%;
+		}
+	}
+
+	&__text {
+		font-size: 1.06em;
+		line-height: 1.52;
+	}
+}
+
+@-webkit-keyframes fadeInAnim {
+ from {
+    opacity: 0;
+  }
+
+  5%, 40% {
+  	opacity: 1;
+  }
+
+  45% {
+  	opacity: 0;
+  }
+
+  to {
+  	opacity: 0;
+  }
+}
+
+@keyframes fadeInAnim {
+ from {
+    opacity: 0;
+  }
+
+  5%, 40% {
+  	opacity: 1;
+  }
+
+  45% {
+  	opacity: 0;
+  }
+
+  to {
+  	opacity: 0;
+  }
+}
+
+.fadeInAnim {
+  -webkit-animation-name: fadeInAnim;
+  animation-name: fadeInAnim;
+   -webkit-animation-duration: 5s;
+  animation-duration: 5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+      -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+}
+
+
+@-webkit-keyframes fadeOutAnim {
+ from {
+    opacity: 1;
+  }
+
+  5%, 40% {
+  	opacity: 0;
+  }
+
+  45% {
+  	opacity: 1;
+  }
+
+  to {
+  	opacity: 1;
+  }
+}
+
+@keyframes fadeOutAnim {
+ from {
+    opacity: 1;
+  }
+
+  5%, 40% {
+  	opacity: 0;
+  }
+
+  45% {
+  	opacity: 1;
+  }
+
+  to {
+  	opacity: 1;
+  }
+}
+
+.fadeOutAnim {
+  -webkit-animation-name: fadeOutAnim;
+  animation-name: fadeOutAnim;
+   -webkit-animation-duration: 5s;
+  animation-duration: 5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+      -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+}
+
+
+.active {
+	.listing__item {
+		opacity: 1;
+		transform: translateY(0)
+	}
+}

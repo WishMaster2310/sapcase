@@ -1,0 +1,127 @@
+//@woffset-top: 348px;
+@woffset-top: 259px;
+@woffset-left: 167px;
+
+.workflow {
+	position: relative;
+	height: @woffset-top*2;
+
+	&-wrapper {
+		overflow: hidden;
+		position: relative;
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+
+	&-header {
+		text-align: center;
+		margin-bottom: .85em;
+	}
+
+	&-stage {
+		position: relative;
+	}
+
+	&-phone {
+		position: absolute;
+		z-index: 10;
+		top: 0;
+		width: 150px;
+		left: 50%;
+		//margin-left: -94px;
+		margin-left: -72px;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	&-text {
+		max-width: 594px;
+		margin: 0 auto;
+		text-align: center;
+		font-size: 17px;
+		line-height: 1.53;
+		margin-bottom: 1.52em;
+	}
+
+	&__item {
+		display: block;
+		/* width: 162px;
+		height: 323px; */
+		width: 120px;
+		height: 239px;
+		margin: 0;
+		position: absolute;
+		left: 50%;
+		//margin-left: -81px;
+		margin-left: -60px;
+		top: 0px;
+		transition: all 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+		//transform: translate(0, 0) !important;
+		z-index :0;
+
+		img {
+			width: 100%;
+		} 
+
+		&--0 {
+			transform: translate(-@woffset-left*3, 0)
+		}
+		&--1 {
+			transform: translate(-@woffset-left*2, 0)
+		}
+
+		&--2 {
+			transform: translate(-@woffset-left, 0)
+		}
+
+		&--3 {
+			transform: translate(@woffset-left, 0)
+		}
+
+		&--4 {
+			transform: translate(@woffset-left*2, 0)
+		}
+
+		&--5 {
+			transform: translate(@woffset-left*3, 0)
+		}
+
+		&--6 {
+			transform: translate(-@woffset-left*3, @woffset-top)
+		}
+		&--7 {
+			transform: translate(-@woffset-left*2, @woffset-top)
+		}
+
+		&--8 {
+			transform: translate(-@woffset-left, @woffset-top)
+		}
+
+		&--9 {
+			transform: translate(@woffset-left*3, @woffset-top)
+		}
+		&--10 {
+			transform: translate(@woffset-left*2, @woffset-top)
+		}
+
+		&--11 {
+			transform: translate(@woffset-left, @woffset-top)
+		}
+		&--12 {
+			transform: translate(0, @woffset-top)
+		}
+	}
+
+	&__list {
+		width: 1446px;
+		margin-left: -723px;
+		position: absolute;
+		left: 50%;
+	}
+
+	&__list--collapsed &__item {
+		transform: translate(0, 0) !important;
+	}
+}

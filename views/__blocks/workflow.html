@@ -1,0 +1,24 @@
+
+<div class="i-fullheight">
+		<div class="j-vcenter">
+				<div class="j-vcenter__inner">
+						<h2 class="h2 workflow-header">Рабочий процесс</h2>
+						<p class="workflow-text">Проект был реализован от первого прототипа до финальной версии за полтора месяца. Нам удалось опередить плановый график работ за счёт слаженной работы и полного взаимопонимания с клиентом. </p>
+						<div class="workflow-wrapper">
+								<div class="workflow-stage">
+										<div class="workflow">
+												<div class="workflow__list">
+														{% for i in range(0, 13) -%}
+														<div class="workflow__item workflow__item--{{ i }}"><img src="../images/workflow1.png" alt=""></div>
+														{%- endfor %}
+												</div>
+												<div class="workflow-phone">
+													<img src="../images/workflow-phone.png" alt="">
+												</div>
+										</div>
+								</div>
+								{% include "__blocks/slider.html" %}
+						</div>
+				</div>
+		</div>
+</div>

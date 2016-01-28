@@ -1,0 +1,73 @@
+{% set counter = 13 %}
+{% set items = [
+
+	{
+		"img": "../images/slider-screen_1.jpg",
+		"label": "Навигация",
+		"text": "карта и схема места проведения мероприятия",
+		"bigIcon": "",
+		"icons": ["geolabel", "geopointer", "globe", "compas", "geolabel", "geopointer", "globe", "compas" ]
+	},
+	{
+		"img": "../images/slider-screen_1.jpg",
+		"label": "Оценка",
+		"text": "возможность оценить понравившиеся стенды и доклады",
+		"bigIcon": "",
+		"icons": ["star", "bage", "check", "heart", "plus", "star", "bage", "check", "heart", "plus"]
+	},
+	{
+		"img": "../images/slider-schedule.jpg",
+		"label": "Собственное расписание",
+		"text": "возможность составить собственное расписание и добавить напоминания в календарь",
+		"bigIcon": "",
+		"icons": ["pencil", "bage", "search", "time", "docs", "sheet", "pencil", "bage", "search", "time", "docs", "sheet"]
+	},
+	{
+		"img": "../images/slider-screen_1.jpg",
+		"label": "Каталог мероприятий",
+		"text": "каталог предстоящих и прошедших мероприятий со ссылками на полезные материалы",
+		"bigIcon": "",
+		"icons": ["sap", "loader", "share", "sheet", "user", "timefolder","sap", "loader", "share", "sheet", "user", "timefolder"]
+	}
+] %}
+
+<div class="slider">
+		<div class="slider__icons">
+			{% for slide in items %}
+			{%- set parent = loop.index -%}
+				<div class="slider__icon-set slider__icon-set--{{ loop.index }}">
+					{% for icon in slide.icons %}
+						<i class="i-icon i-icon--{{ icon }} slider__icon--{{ parent }}-{{ loop.index }}"></i>
+					{% endfor %}
+				</div>
+			{% endfor %}
+			
+		</div>
+		<div class="slider__viewport">
+			<div class="slider__overflow">
+				<div class="slider__screen">
+					{% for item in items -%}
+						<div class="slider__screen-item slider__screen-item--{{ loop.index }}">
+							<img src="../images/{{ item.img }}" alt="">
+						</div>
+					{%- endfor %}
+				</div>
+			</div>
+		</div>
+		<div class="slider__controls">
+			<div class="slider__arrow slider__arrow--left" data-bind="click: function() {prevSlide()}"></div>
+			<div class="slider__arrow slider__arrow--right" data-bind="click: function() {nextSlide()}"></div>
+		</div>
+		<div class="slider__texts">
+			{%- for item in items %}
+			<div class="slider__text slider__text--{{ loop.index }}">
+				<div class="slider__centroid">
+						<div class="slider__centroid-inner">
+								<div class="slider__text-header">{{ item.label }}</div>
+								<div class="slider__text-para">{{ item.text }}</div>
+						</div>
+				</div>
+			</div>
+			{% endfor -%}
+		</div>
+</div>

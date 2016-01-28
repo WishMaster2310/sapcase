@@ -1,0 +1,74 @@
+.feed {
+	width: 575px;
+	margin: 0 auto;
+	position: relative;
+	transform: translateY(300px);
+	opacity: 0;
+	transition: all .5s ease-in-out;
+	
+	&__text {
+		background-color: #f9fafa;
+		padding: 15px 15px 20px 15px;
+		border-radius: 6px;
+		text-align: center;
+		font-style: italic;
+		font-size: 14px;
+		line-height: 20px;
+
+		&:before {
+			content: ' "';
+			font-size: 2em;
+			margin-left: -.4em;
+			margin-top: 2px;
+			margin-right: .1em;
+			line-height: 15px;
+			display: inline-block;
+			vertical-align: middle;
+			font-family: proxima_regular,Arial,Verdana,sans-serif;
+		}
+
+		&:after {
+			content: ' "';
+			font-size: 2em;
+			margin-left: .1em;
+			margin-right: -.4em;
+			line-height: 10px;
+			display: inline-block;
+			vertical-align: middle;
+			font-family: proxima_regular,Arial,Verdana,sans-serif;
+			margin-top: 2px;
+		}
+	}
+
+	&-title {
+		text-align: center;
+		margin-bottom: .875em;
+	}
+
+	&-wrapper {
+		padding: 50px 0;
+	}
+
+	&__img {
+		margin-top: -10px;
+		margin-bottom: -30px;
+		text-align: center;
+	}
+
+	&__author {
+		font-size: 18px;
+		text-transform: uppercase;
+		font-weight: bold;
+		text-align: right;
+		position: absolute;
+		bottom: 36px;
+		right: 0;
+	}
+}
+
+.active {
+	.feed {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
