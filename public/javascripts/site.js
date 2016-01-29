@@ -1,14 +1,13 @@
-
 if (/webkit.*mobile/i.test(navigator.userAgent)) {
-  (function($) {
-    $.fn.offsetOld = $.fn.offset;
-    $.fn.offset = function() {
-      var result = this.offsetOld();
-      result.top -= window.scrollY;
-      result.left -= window.scrollX;
-      return result;
-    };
-  })(jQuery);
+    (function($) {
+        $.fn.offsetOld = $.fn.offset;
+        $.fn.offset = function() {
+            var result = this.offsetOld();
+            result.top -= window.scrollY;
+            result.left -= window.scrollX;
+            return result;
+        };
+    })(jQuery);
 };
 
 var m_site = {
@@ -40,23 +39,25 @@ $(document).ready(function() {
 
                     if (window.location.hash == "") {
                         $('.hero').addClass('active')
-                        m_site.runCounters();
-                        m_site.runWorkflow();
-                        m_site.runForm();
+                        
                     };
 
                     if ($(window).width() < 1024) {
 
-                    	if (/webkit.*mobile/i.test(navigator.userAgent)) {
-                    		$('.j-section').addClass('active');
-                    	} else {
-                    		getMobyScrollAnchor();
-                  	  	$(window).on('scroll', function() {
-                  	  	mobyScrollAction()});
-                    	}
-                    	
+                        if (/webkit.*mobile/i.test(navigator.userAgent)) {
+                            $('.j-section').addClass('active');
+                            m_site.runCounters();
+		                        m_site.runWorkflow();
+		                        m_site.runForm();
+                        } else {
+                            getMobyScrollAnchor();
+                            $(window).on('scroll', function() {
+                                mobyScrollAction()
+                            });
+                        }
+
                     } else {
-                    	m_site.scrollify();
+                        m_site.scrollify();
                     }
                 }, 100)
             };
@@ -64,52 +65,52 @@ $(document).ready(function() {
     });
 
     function getMobyScrollAnchor() {
-      $('.j-section').each(function() {
-      	var $that = $(this);
-      	console.log($that.index())
-      	if(!$that.hasClass('active')) {
-	      	var obj = {
-	      		name: $that.data('section-name') || 'default',
-	      		pos: $that.offset().top,
-	      		height: $that.outerHeight()
-	      	}
+        $('.j-section').each(function() {
+            var $that = $(this);
+            console.log($that.index())
+            if (!$that.hasClass('active')) {
+                var obj = {
+                    name: $that.data('section-name') || 'default',
+                    pos: $that.offset().top,
+                    height: $that.outerHeight()
+                }
 
-	      	m_site.heightsArr.push(obj)
-	      }
-      })
+                m_site.heightsArr.push(obj)
+            }
+        })
     }
 
-    function mobyScrollAction () {
-    	var vh = $(window).height();
-    	var st = $(window).scrollTop();
+    function mobyScrollAction() {
+        var vh = $(window).height();
+        var st = $(window).scrollTop();
 
-    	_.forEach(m_site.heightsArr(), function(n) {
+        _.forEach(m_site.heightsArr(), function(n) {
 
-    		if (n && n.pos < st + vh && st < n.pos + n.height - vh/2 ) {
-					console.log(n.name, '---->');
-					$('[data-section-name="' + n.name + '"').addClass('active')
+            if (n && n.pos < st + vh && st < n.pos + n.height - vh / 2) {
+                console.log(n.name, '---->');
+                $('[data-section-name="' + n.name + '"').addClass('active')
 
-					if (n.name === 'workflow') {
-						m_site.runWorkflow()
+                if (n.name === 'workflow') {
+                    m_site.runWorkflow()
 
-					} else if (n.name === 'feed') {
+                } else if (n.name === 'feed') {
 
-						m_site.runCounters()
+                    m_site.runCounters()
 
-					} else if (n.name === 'form') {
-						m_site.runForm()
+                } else if (n.name === 'form') {
+                    m_site.runForm()
 
-					}
+                }
 
-					m_site.heightsArr.remove(n)
-    		};
-    	})
+                m_site.heightsArr.remove(n)
+            };
+        })
     }
 
 
-  
 
-   
+
+
 
     ko.applyBindings(m_site);
 
@@ -118,7 +119,7 @@ $(document).ready(function() {
         dots: true
     }).on('afterChange', function(slick, currentSlide) {
         m_site.activeSlick(currentSlide.currentSlide);
-       
+
     });
 
 
@@ -271,7 +272,7 @@ m_site.sectionStarter = {
     6: {
         showed: ko.observable(false),
         run: function() {
-           
+
         }
     }
 }
