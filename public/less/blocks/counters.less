@@ -60,6 +60,19 @@
 	&__caption {
 		font-size: 17px;
 	}
+
+	@media (max-width: @sm) {
+		&__item {
+			display: block;
+			width: 100%;
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+		&__number {
+			text-align: center;
+		}
+	}
 }
 
 .active {

@@ -10,7 +10,7 @@
 	</div>
 </div>
 {% include "__blocks/hero.html" %}
-<section class="j-section listing-section">
+<section class="j-section listing-section" data-section-name="listing">
     <div class="j-container i-fullheight">
         <div class="j-vcenter">
             <div class="j-vcenter__inner">
@@ -19,25 +19,24 @@
         </div>
     </div>
 </section>
-<section class="j-section workflow-section">
+<section class="j-section workflow-section" data-section-name="workflow">
     {% include "__blocks/workflow.html" %}
 </section>
-<section class="j-section">
+<section class="j-section" data-section-name="feed">
     <div class="i-fullheight">
         <div class="j-vcenter">
             <div class="j-vcenter__inner j-vcenter__inner--vat">
-                {% include "__blocks/counters.html" %} {% include "__blocks/feed.html" %}
+                {% include "__blocks/counters.html" %} 
+                {% include "__blocks/feed.html" %}
             </div>
         </div>
     </div>
 </section>
-<section class="j-section createyours-wrapper">
+<section class="j-section createyours-wrapper" data-section-name="createyourapp" >
     {% include "__blocks/createyours.html" %}
 </section>
-<section class="j-section callback-wrapper">
+<section class="j-section callback-wrapper" data-section-name="form" >
     <div class="callback-stage">
-
-
         <div class="callback-centroid">
             {% for i in range(0, 6) %}
             <div class="callback-stage__round callback-stage__round--{{ i }}">

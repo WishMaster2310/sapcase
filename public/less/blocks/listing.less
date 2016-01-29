@@ -48,13 +48,6 @@
 			left: 50%;
 			transform: translateX(-50%);
 
-			&:nth-child(1) {
-				.fadeInAnim()
-			}
-
-			&:nth-child(2) {
-				.fadeOutAnim()
-			}
 		}
 	}
 
@@ -71,6 +64,26 @@
 	&__text {
 		font-size: 1.06em;
 		line-height: 1.52;
+	}
+
+	@media (max-width: @sm) {
+		&__inner {
+			display: block;
+		}
+
+		&__col {
+			display: block;
+			width: 100%;
+			padding: 0 20px;
+
+			&--left {
+				text-align: center;
+			}
+		}
+		&__header {
+			margin-top: 20px;
+			text-align: center;
+		}
 	}
 }
 

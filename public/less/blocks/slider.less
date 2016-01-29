@@ -157,6 +157,45 @@
 		}
 	}
 
+	@media (max-width: @sm) {
+		&__controls {
+			position: absolute;
+			height: 100px;
+			width: 100%;
+			left: 0;
+			right: 0;
+			top: 50%;
+			margin-left: 0;
+			margin-top: -50px;
+			z-index: 2;
+		}
+
+		&__texts {
+			width: 100%;	
+			left: 0;	
+			display: none !important;	
+			margin-left: 0;	
+
+		}
+		&__centroid {
+			display: block;	
+		}
+		&__centroid-inner {
+			vertical-align: top;
+			display: block;	
+			background-color: #fff;	
+			background-color: fade(#fff, 80%);
+			text-align: center;	
+
+		}
+
+		&__text {
+			right: 50%;	
+			margin-right: -130px;
+		}
+
+	}
+
 	.active {
 		.slider__icon--1{
 			&-1 {transform: translate(-394px, 240px);}
