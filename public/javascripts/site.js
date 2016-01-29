@@ -25,6 +25,11 @@ $(document).ready(function() {
 			if (imgCounter === $('.j-preload').length -2 ) {
 				setTimeout(function() {
 					$('.saploader').hide();
+					
+
+					if (window.location.hash == "") {
+						$('.hero').addClass('active')
+					};
 					m_site.scrollify();
 				}, 100)
 				
