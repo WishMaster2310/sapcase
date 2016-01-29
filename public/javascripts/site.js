@@ -9,7 +9,7 @@ if (/webkit.*mobile/i.test(navigator.userAgent)) {
       return result;
     };
   })(jQuery);
-}
+};
 
 var m_site = {
     delay: 700,
@@ -40,12 +40,21 @@ $(document).ready(function() {
 
                     if (window.location.hash == "") {
                         $('.hero').addClass('active')
+                        m_site.runCounters();
+                        m_site.runWorkflow();
+                        m_site.runForm();
                     };
 
                     if ($(window).width() < 1024) {
-                    	getMobyScrollAnchor();
-                  	  $(window).on('scroll', function() {
+
+                    	if (/webkit.*mobile/i.test(navigator.userAgent)) {
+                    		$('.j-section').addClass('active');
+                    	} else {
+                    		getMobyScrollAnchor();
+                  	  	$(window).on('scroll', function() {
                   	  	mobyScrollAction()});
+                    	}
+                    	
                     } else {
                     	m_site.scrollify();
                     }
