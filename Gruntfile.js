@@ -50,7 +50,7 @@ grunt.initConfig({
 			files:  ['views/*.html', 'views/*/*.html', 'public/javascripts/*.js',],
 			tasks:  [ 'express:dev'],
 			options: {
-				spawn: false 
+				spawn: false
 			}
 		},
 		less: {
@@ -68,6 +68,6 @@ grunt.loadNpmTasks('grunt-nunjucks');
 
 // Default task(s).
 grunt.registerTask('icons', ['sprite:main']);
-grunt.registerTask('default', [ 'express:dev', 'watch']);
+grunt.registerTask('default', [ 'express:dev', 'watch' ]);
 
 }
