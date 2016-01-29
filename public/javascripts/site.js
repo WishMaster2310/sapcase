@@ -24,7 +24,7 @@ $(document).ready(function() {
 			console.log(imgCounter, $('.j-preload').length);
 			if (imgCounter === $('.j-preload').length -2 ) {
 				setTimeout(function() {
-					$('.saploader').hide();
+					$('.saploader').fadeOut(300);
 					
 					if (window.location.hash == "") {
 						$('.hero').addClass('active')
