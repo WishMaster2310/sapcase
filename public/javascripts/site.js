@@ -23,8 +23,12 @@ $(document).ready(function() {
 			imgCounter ++;
 			console.log(imgCounter, $('.j-preload').length);
 			if (imgCounter === $('.j-preload').length -2 ) {
-				$('.saploader').hide();
-				m_site.scrollify();
+				setTimeout(function() {
+					$('.saploader').hide();
+					m_site.scrollify();
+				}, 100)
+				
+				
 			};
 		}
 	});
@@ -148,9 +152,6 @@ m_site.sectionStarter = {
 	0: {
 		showed: ko.observable(false),
 		run: function() {
-			if (this.showed()) {
-				//m_site.runWorkflow()
-			};
 			return
 		}
 	},
