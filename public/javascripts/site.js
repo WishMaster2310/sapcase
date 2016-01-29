@@ -13,6 +13,25 @@ $(document).ready(function() {
 		return -c *(t/=d)*(t-2) + b;
 	};
 
+	var imgCounter = 0;
+	$('.j-preload').each(function() {
+		var src = $(this).attr('src');
+		var img = new Image;
+		img.src = src;
+		console.log(src, $('.j-preload').length);
+		img.onload = function() {
+			imgCounter ++;
+			console.log(imgCounter, $('.j-preload').length);
+			if (imgCounter === $('.j-preload').length -2 ) {
+				$('.saploader').hide();
+				m_site.scrollify();
+			};
+		}
+	});
+
+
+
+	
 	ko.applyBindings(m_site);
 	
 
@@ -25,7 +44,8 @@ $(document).ready(function() {
 		m_site.activeSlick(currentSlide.currentSlide);
 		console.log(m_site.activeSlick())
 	});
-	m_site.scrollify();
+
+	
 });
 
 m_site.runWorkflow = function() {
@@ -190,7 +210,7 @@ m_site.scrollify = function() {
 	    after:function(index, arr) {
 	    	//m_site.sectionStarter(arr[index], index)
 	    	console.log(index, "index")
-	    	if (!m_site.sectionStarter[index].showed()) {
+	    	if (m_site.sectionStarter[index] && !m_site.sectionStarter[index].showed()) {
 	    			
 	    			$(arr[index]).addClass('active');
 	    			m_site.sectionStarter[index].showed(true);

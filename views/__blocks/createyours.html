@@ -29,7 +29,7 @@
 ] %}
 <div class="createyours-bg">
 	{% for item in slider %}
-	    <img src="../images/{{ item.bg }}"  data-bind="css: {'active': m_site.activeSlick() == {{ loop.index - 1}}}"  alt="">
+	    <img src="../images/{{ item.bg }}" class="j-preload"  data-bind="css: {'active': m_site.activeSlick() == {{ loop.index - 1}}}"  alt="">
 	{% endfor %}
 </div>
 <div class="i-fullheight">
@@ -44,7 +44,7 @@
                 		  <div class="createyours-slider__item">
                 		  	<div class="createyours__table">
                 		  		<div class="createyours__col createyours__col--img">
-                		  			<img src="../images/{{ item.img }}" alt="">
+                		  			<img src="../images/{{ item.img }}" class="j-preload" alt="">
                 		  		</div>
                 		  		<div class="createyours__col createyours__col--content">
                 		  			<div class="createyours__caption">

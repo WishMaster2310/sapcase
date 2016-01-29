@@ -9,7 +9,7 @@
 		"icons": ["geolabel", "geopointer", "globe", "compas", "geolabel", "geopointer", "globe", "compas" ]
 	},
 	{
-		"img": "../images/slider-screen_1.jpg",
+		"img": "../images/slider-screen_2.jpg",
 		"label": "Оценка",
 		"text": "возможность оценить понравившиеся стенды и доклады",
 		"bigIcon": "",
@@ -23,7 +23,7 @@
 		"icons": ["pencil", "bage", "search", "time", "docs", "sheet", "pencil", "bage", "search", "time", "docs", "sheet"]
 	},
 	{
-		"img": "../images/slider-screen_1.jpg",
+		"img": "../images/slider-screen_4.jpg",
 		"label": "Каталог мероприятий",
 		"text": "каталог предстоящих и прошедших мероприятий со ссылками на полезные материалы",
 		"bigIcon": "",
@@ -48,7 +48,7 @@
 				<div class="slider__screen">
 					{% for item in items -%}
 						<div class="slider__screen-item slider__screen-item--{{ loop.index }}">
-							<img src="../images/{{ item.img }}" alt="">
+							<img src="../images/{{ item.img }}" class="j-preload" alt="">
 						</div>
 					{%- endfor %}
 				</div>
