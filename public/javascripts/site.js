@@ -26,14 +26,11 @@ $(document).ready(function() {
 				setTimeout(function() {
 					$('.saploader').hide();
 					
-
 					if (window.location.hash == "") {
 						$('.hero').addClass('active')
 					};
 					m_site.scrollify();
 				}, 100)
-				
-				
 			};
 		}
 	});
