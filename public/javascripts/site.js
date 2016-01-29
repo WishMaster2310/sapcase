@@ -25,6 +25,7 @@ $(document).ready(function() {
 			if (imgCounter === $('.j-preload').length -2 ) {
 				setTimeout(function() {
 					$('.saploader').fadeOut(300);
+					$('body').removeClass('on-load');
 					
 					if (window.location.hash == "") {
 						$('.hero').addClass('active')
