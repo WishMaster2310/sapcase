@@ -27,7 +27,7 @@ grunt.initConfig({
 				sourceMapFilename: 'public/stylesheets/style.css.map',
 				syncImport: true,
 				plugins: [
-					new (require('less-plugin-autoprefix'))({browsers: ['> 0.5%', 'IE 8', 'IE 9']})
+					new (require('less-plugin-autoprefix'))({browsers: ['> 0.1%', 'IE 8', 'IE 9']})
 					//new (require('less-plugin-clean-css'))()
 				]
 			},

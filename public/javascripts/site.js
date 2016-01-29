@@ -1,3 +1,16 @@
+
+if (/webkit.*mobile/i.test(navigator.userAgent)) {
+  (function($) {
+    $.fn.offsetOld = $.fn.offset;
+    $.fn.offset = function() {
+      var result = this.offsetOld();
+      result.top -= window.scrollY;
+      result.left -= window.scrollX;
+      return result;
+    };
+  })(jQuery);
+}
+
 var m_site = {
     delay: 700,
     currSlide: ko.observable(0),
